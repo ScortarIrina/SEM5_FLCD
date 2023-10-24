@@ -1,0 +1,38 @@
+https://github.com/ScortarIrina/SEM5_FLCD/tree/main/lab2
+
+The Symbol Table (ST) is formed of three distinct hash tables:
+    - one for identifiers
+    - one for integer constants
+    - one for string constants
+Each hash table is represented by a list, and each position in the list contains another list to store values that hash
+to the same position.
+Elements in the ST are identified by pairs of indices. The first index corresponds to the list where the element is
+stored, and the second index is its position within that list.
+The hash function for integer values involves computing the value modulo the size of the list.
+For string constants and identifiers, the hash function calculates the sum of ASCII codes of their characters modulo the
+size of the list.
+The implementation of the hash table is generic and can handle various types of keys.
+
+
+Operations for the Hash Table:
+    - hash(key: int): int: Computes the position in the Symbol Table for adding an integer constant
+    - hash(key: string): int: Computes the position in the Symbol Table for adding a string constant or an identifier,
+      based on the sum of ASCII codes of their characters
+    - getHashValue(key: T): int: Returns the corresponding position in the Symbol Table based on the type of the
+      parameter 'key'
+    - add(key: T): (int, int): Adds the key to the hash table and returns its position if the operation is successful;
+      otherwise, throws an exception
+    - contains(key: T): boolean: Indicates whether the given key is in the hash table or not
+    - getPosition(key: T): (int, int): Returns the position in the Symbol Table of the given key, if it exists;
+      otherwise, returns (-1, -1)
+    - toString() (overridden method): Returns the string representation of the hash table
+
+
+Operations for the ST:
+    - addIdentifier(name: string): (int, int): Adds an identifier to the ST and returns its position in the ST
+    - addIntConst(constant: int): (int, int): Adds an integer constant to the ST and returns its position in the ST
+    - addStringConst(constant: string): (int, int): Adds a string constant to the ST and returns its position in the ST
+    - getIdentifierPos(name: string): (int, int): Retrieves the position of the identifier in the ST
+    - getIntConstPos(constant: int): (int, int): Retrieves the position of the integer constant in the ST
+    - getStringConstPos(constant: string): (int, int): Retrieves the position of the string constant in the ST
+    - toString() (overridden method): Retrieves the string representation of the entire ST
