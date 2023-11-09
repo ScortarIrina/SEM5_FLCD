@@ -4,15 +4,50 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="76d00432-e8e7-4b98-850e-3abc6b2ac01d" name="Changes" comment="" />
+    <list default="true" id="76d00432-e8e7-4b98-850e-3abc6b2ac01d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../lab2/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/HashTable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1PIF.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1ST.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1err.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errPIF.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errST.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2PIF.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2ST.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3PIF.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3ST.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4PIF.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4ST.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MyScanner.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Pair.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ProgramInternalForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SymbolTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 6
-}]]></component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2Xvx4GSSi5gmcGOYDD7YtxKqNoD" />
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
@@ -24,9 +59,30 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/IO/p3" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/IO/p2" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/IO/p1err" />
+      <recent name="$PROJECT_DIR$/src/main/java/org/example/IO/p1" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="lab3" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -35,7 +91,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699523164359</updated>
+      <workItem from="1699551430441" duration="3038000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/ProgramInternalForm.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
