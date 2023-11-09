@@ -1,0 +1,135 @@
+1. HashTable.java
+
+    - Purpose:
+        The HashTable class implements a simple hash table with separate chaining to store elements.
+        It provides methods for finding the position of an element, hashing an element, checking if the table contains
+        an element, and adding a new element.
+
+    - Class Members:
+        - size: represents the size of the hash table
+        - table: an ArrayList of ArrayLists of Strings representing the hash table
+
+    - Methods:
+        - Constructor: "HashTable(Integer size)"
+                - Initializes the hash table with the given size, creating empty lists for each position
+        - "findPositionOfTerm(String elem): Pair<Integer, Integer>"
+                - Searches for the position of an element in the hash table using separate chaining
+        - "private Integer hash(String key): Integer"
+                - Hashes the given element using the ASCII representation of its characters
+        - "public boolean containsTerm(String elem): boolean"
+                - Checks whether the hash table contains a specific element
+        - "public boolean add(String elem): boolean"
+                - Adds a new element to the hash table
+        - "@Override public String toString(): String"
+                - Generates a string representation of the hash table
+
+-----------------------------------------------------------------------------------------------------------------------
+
+2. Main.java
+
+    - Purpose:
+        The Main class contains the main method to demonstrate the usage of the scanner (MyScanner), saving the results
+        to output files.
+
+    - Methods:
+        - "private static void printToFile(String filePath, Object object)"
+                - Utility method to print an object to a file
+        - "private static void run(String filePath)"
+                - Executes the scanner on a specified file, saving Symbol Table and Program Internal Form to output files
+        - "public static void main(String[] args)"
+                - Entry point for the application, runs the scanner on multiple input files
+
+------------------------------------------------------------------------------------------------------------------------
+
+3. MyScanner.java
+
+    - Purpose:
+        The MyScanner class implements a lexical scanner for a simple programming language. It tokenizes a given program
+        file, identifies keywords, operators, separators, constants, and identifiers, and generates a Symbol Table and
+        Program Internal Form.
+
+    - Class Members:
+        - "operators", "separators", "keywords"
+                - Lists of operators, separators, and keywords used in the programming language
+        - "filePath"
+                - The path to the input program file.
+        - "symbolTable"
+                - An instance of the SymbolTable class to store identifiers
+        - "pif"
+                - An instance of the ProgramInternalForm class to store the Program Internal Form
+
+    - Methods:
+        - "public MyScanner(String filePath)"
+                - Initializes the scanner with the given file path and creates instances of SymbolTable and
+                  ProgramInternalForm
+        - "private String readFile()"
+                - String throws FileNotFoundException: Reads the content of the input file, replacing tabs with empty
+                  strings
+        - "private List<Pair<String, Pair<Integer, Integer>>> createListOfProgramsElems():
+          List<Pair<String, Pair<Integer, Integer>>>"
+                - Prepares the array for tokenization, replacing separators and calling the tokenize method
+        - "private List<Pair<String, Pair<Integer, Integer>>> tokenize(List<String> tokensToBe):
+          List<Pair<String, Pair<Integer, Integer>>>"
+                - Tokenizes the elements of the program, handling string constants and new lines
+        - "public void scan()"
+                - Scans the list of created tokens, classifying each token into categories (keywords, operators,
+                separators, constants, identifiers), and generates the Symbol Table and Program Internal Form
+
+------------------------------------------------------------------------------------------------------------------------
+
+4. Pair.java
+
+    - Purpose:
+        The Pair class is a generic class representing a pair of two elements.
+
+    - Class Members:
+        - "first": The first element of the pair
+        - "second": The second element of the pair
+
+    - Methods:
+        - "public Pair(First first, Second second)"
+                - Initializes the pair with the given first and second elements
+        - "@Override public String toString(): String"
+                - Generates a string representation of the pair
+
+------------------------------------------------------------------------------------------------------------------------
+
+5. ProgramInternalForm.java
+
+    - Purpose:
+        The ProgramInternalForm class represents the Program Internal Form used by the scanner to store tokens and their
+        positions.
+
+    - Class Members:
+        - "tokenPositionPair": List of pairs representing tokens and their positions
+        - "types": List representing the categories of tokens (keywords, operators, separators, constants,
+          identifiers represented as integers)
+
+    - Methods:
+        - "public ProgramInternalForm()"
+                - Initializes the Program Internal Form with empty lists
+        - "public void add(Pair<String, Pair<Integer, Integer>> pair, Integer type)"
+                - Adds a token, its position, and its category to the Program Internal Form
+        - "@Override public String toString(): String"
+                - Generates a string representation of the Program Internal Form
+
+------------------------------------------------------------------------------------------------------------------------
+
+6. SymbolTable.java
+
+    - Purpose:
+        The SymbolTable class represents the Symbol Table used by the scanner to store identifiers.
+
+    - Class Members:
+        - "size": The size of the symbol table
+        - "hashTable": An instance of the HashTable class to store identifiers
+
+    - Methods:
+        - "public SymbolTable(Integer size)"
+                - Initializes the Symbol Table with the given size
+        - "public Pair findPositionOfTerm(String term): Pair"
+                - Finds the position of a term in the Symbol Table
+        - "public boolean add(String term): boolean"
+                - Adds a term to the Symbol Table
+        - "@Override public String toString(): String"
+                - Generates a string representation of the Symbol Table for debugging purposes

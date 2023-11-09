@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76d00432-e8e7-4b98-850e-3abc6b2ac01d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/Documentation.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HashTable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1PIF.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1ST.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errPIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errPIF.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errST.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2PIF.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2ST.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3PIF.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3ST.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4PIF.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4ST.out" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyScanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699523164359</updated>
-      <workItem from="1699551430441" duration="4875000" />
+      <workItem from="1699551430441" duration="6546000" />
     </task>
     <task id="LOCAL-00001" summary="somewhat working">
       <option name="closed" value="true" />
@@ -90,7 +79,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699557208397</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="lab3 added, needs documentation">
+      <option name="closed" value="true" />
+      <created>1699558896815</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1699558896815</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,6 +106,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="somewhat working" />
-    <option name="LAST_COMMIT_MESSAGE" value="somewhat working" />
+    <MESSAGE value="lab3 added, needs documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab3 added, needs documentation" />
   </component>
 </project>
