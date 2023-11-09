@@ -5,30 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="76d00432-e8e7-4b98-850e-3abc6b2ac01d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../lab2/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/HashTable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1PIF.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1ST.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1err.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errPIF.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errST.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2PIF.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2ST.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3PIF.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3ST.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4PIF.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4ST.out" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/MyScanner.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Pair.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/ProgramInternalForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/SymbolTable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/HashTable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/HashTable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1PIF.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1/p1ST.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errPIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errPIF.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1err/p1errST.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2PIF.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2/p2ST.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3PIF.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3/p3ST.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4PIF.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4PIF.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4ST.out" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p4/p4ST.out" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/MyScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/MyScanner.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,8 +80,17 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1699523164359</updated>
-      <workItem from="1699551430441" duration="3038000" />
+      <workItem from="1699551430441" duration="4875000" />
     </task>
+    <task id="LOCAL-00001" summary="somewhat working">
+      <option name="closed" value="true" />
+      <created>1699557208397</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699557208397</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,15 +107,8 @@
       </map>
     </option>
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/org/example/ProgramInternalForm.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="somewhat working" />
+    <option name="LAST_COMMIT_MESSAGE" value="somewhat working" />
   </component>
 </project>

@@ -21,7 +21,8 @@ public class HashTable {
     }
 
     /**
-     * With this method we look for the position of an element and return it
+     * This method searches for the position of an element in the hash table.
+     *
      * @param elem - the element for which we want to find the position
      * @return - the position of the element
      */
@@ -41,23 +42,26 @@ public class HashTable {
     }
 
     /**
-     * Function used for hashing an element
+     * This method hashes the given element using the ASCII representation of its characters.
+     *
      * @param key - the element for which we compute the hash
      * @return - the hash of the element
      */
     private Integer hash(String key) {
-        int sumCharacters = 0;
+        int sumAsciiOfChars = 0;
         char[] keyCharacters = key.toCharArray();
         for (char c : keyCharacters) {
-            sumCharacters += c;
+            sumAsciiOfChars += c;
         }
-        return sumCharacters % size;
+        return sumAsciiOfChars % size;
     }
 
     /**
-     * This method looks whether the hashmap contains a specific element
+     * This method checks whether the hashmap contains a specific element
+     *
      * @param elem - the element we are looking for in the hashmap
-     * @return - returns true if the element is in the hashmap and false otherwise
+     * @return - TRUE if the element is in the hashmap
+     *           FALSE otherwise
      */
     public boolean containsTerm(String elem) {
         return this.findPositionOfTerm(elem) != null;
@@ -65,9 +69,10 @@ public class HashTable {
 
     /**
      * This method adds a new element in the hashmap
+     *
      * @param elem - the element we want to add in the hashmap
-     * @return - return true if the element was added successfully in the hashmap and false if the element was already
-     * in the hashmap
+     * @return - TRUE if the element was added successfully in the hashmap
+     *           FALSE if the element was already in the hashmap
      */
     public boolean add(String elem) {
         if (containsTerm(elem)) {
@@ -75,7 +80,6 @@ public class HashTable {
         }
 
         Integer pos = hash(elem);
-
         ArrayList<String> elems = this.table.get(pos);
         elems.add(elem);
 
