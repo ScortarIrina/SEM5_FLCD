@@ -23,7 +23,7 @@ public class MyScanner {
     );
 
     private final ArrayList<String> keywords = new ArrayList<>(
-            List.of("print", "if", "else", "while", "int", "string", "return")
+            List.of("read", "print", "if", "else", "while", "int", "string", "return")
     );
 
     private final String filePath;
@@ -34,7 +34,7 @@ public class MyScanner {
 
     public MyScanner(String filePath) {
         this.filePath = filePath;
-        this.symbolTable = new SymbolTable(1000);
+        this.symbolTable = new SymbolTable(100);
         this.pif = new ProgramInternalForm();
     }
 

@@ -13,7 +13,7 @@ s - Pair {first = 15, second = 0} -> 1
 int - Pair {first = -1, second = -1} -> 2
 i - Pair {first = 5, second = 0} -> 1
 ; - Pair {first = -1, second = -1} -> 4
-read - Pair {first = 12, second = 0} -> 1
+read - Pair {first = -1, second = -1} -> 2
 ( - Pair {first = -1, second = -1} -> 4
 n - Pair {first = 10, second = 0} -> 1
 ) - Pair {first = -1, second = -1} -> 4
@@ -33,7 +33,7 @@ i - Pair {first = 5, second = 0} -> 1
 n - Pair {first = 10, second = 0} -> 1
 ) - Pair {first = -1, second = -1} -> 4
 { - Pair {first = -1, second = -1} -> 4
-read - Pair {first = 12, second = 0} -> 1
+read - Pair {first = -1, second = -1} -> 2
 ( - Pair {first = -1, second = -1} -> 4
 x - Pair {first = 20, second = 0} -> 1
 [ - Pair {first = -1, second = -1} -> 4
