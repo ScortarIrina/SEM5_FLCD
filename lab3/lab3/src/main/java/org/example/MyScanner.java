@@ -1,6 +1,7 @@
 package org.example;
 
 import lombok.Getter;
+import lombok.Setter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +10,8 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
+@Getter
+@Setter
 public class MyScanner {
 
     private final ArrayList<String> operators = new ArrayList<>(
@@ -16,7 +19,7 @@ public class MyScanner {
     );
 
     private final ArrayList<String> separators = new ArrayList<>(
-            List.of("{", "}", "(", ")", "[", "]", ":", ";", " ", ",", "\t", "\n", "'", "\"")
+            List.of("{", "}", "(", ")", "[", "]", ":", ";", " ", ",", "\t", "\n", "\"")
     );
 
     private final ArrayList<String> keywords = new ArrayList<>(
@@ -25,15 +28,13 @@ public class MyScanner {
 
     private final String filePath;
 
-    @Getter
     private SymbolTable symbolTable;
 
-    @Getter
     private ProgramInternalForm pif;
 
     public MyScanner(String filePath) {
         this.filePath = filePath;
-        this.symbolTable = new SymbolTable(100);
+        this.symbolTable = new SymbolTable(1000);
         this.pif = new ProgramInternalForm();
     }
 
@@ -175,13 +176,13 @@ public class MyScanner {
                 this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 3);
             } else if (this.separators.contains(token)) {
                 this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 4);
-            } else if (Pattern
+            } else if (Pattern // CONSTANTS
                     .compile("^0|[-|+][1-9]([0-9])*|'[1-9]'|'[a-zA-Z]'|\"[0-9]*[a-zA-Z ]*\"$")
                     .matcher(token)
                     .matches()) {
                 this.symbolTable.add(token);
                 this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 0);
-            } else if (Pattern
+            } else if (Pattern // IDENTIFIERS
                     .compile("^([a-zA-Z]|_)|[a-zA-Z_0-9]*")
                     .matcher(token)
                     .matches()) {
@@ -189,7 +190,7 @@ public class MyScanner {
                 this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 1);
             } else {
                 Pair<Integer, Integer> pairLineColumn = t.getSecond();
-                System.out.println("\nLEXICAL ERROR: in file + \" " + filePath + "\"" +
+                System.out.println("\nLEXICAL ERROR: in file \" " + filePath + "\"" +
                         "\n\tline: " + pairLineColumn.getFirst() +
                         "\n\tcolumn: " + pairLineColumn.getSecond() +
                         "\n\tinvalid token: " + t.getFirst());
@@ -198,7 +199,7 @@ public class MyScanner {
         });
 
         if (!lexicalErrorExists.get()) {
-            System.out.println("\nProgram in file + \"" + filePath + "\"is lexically correct.");
+            System.out.println("\nProgram in file \"" + filePath + "\" is lexically correct.");
         }
 
     }

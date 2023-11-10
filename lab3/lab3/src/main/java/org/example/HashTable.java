@@ -90,7 +90,7 @@ public class HashTable {
     public String toString() {
         StringBuilder computedString = new StringBuilder();
         for (int i = 0; i < this.table.size(); i++) {
-            if (this.table.get(i).size() > 0) {
+            if (!this.table.get(i).isEmpty()) {
                 computedString.append(i);
                 computedString.append(" - ");
                 computedString.append(this.table.get(i));
