@@ -5,9 +5,9 @@ import java.util.List;
 
 public class ProgramInternalForm {
 
-    private List<Pair<String, Pair<Integer, Integer>>> tokenPositionPair;
+    private final List<Pair<String, Pair<Integer, Integer>>> tokenPositionPair;
 
-    private List<Integer> types;
+    private final List<Integer> types;
 
     public ProgramInternalForm() {
         this.tokenPositionPair = new ArrayList<>();
@@ -20,7 +20,7 @@ public class ProgramInternalForm {
      * @param pair - pair composed of token/constant/identifier + its position in the ST
      * @param type - the category of the token (2, 3, 4) or constant (0) or identifier (1)
      */
-    public void add(Pair<String, Pair<Integer, Integer>> pair, Integer type) {
+    public void addToPIF(Pair<String, Pair<Integer, Integer>> pair, Integer type) {
         this.tokenPositionPair.add(pair);
         this.types.add(type);
     }

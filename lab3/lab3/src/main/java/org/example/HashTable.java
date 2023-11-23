@@ -11,7 +11,6 @@ public class HashTable {
     private Integer size;
     private ArrayList<ArrayList<String>> table;
 
-
     public HashTable(Integer size) {
         this.size = size;
         this.table = new ArrayList<>();
