@@ -13,8 +13,8 @@ public class SymbolTable {
         hashTable = new HashTable(size);
     }
 
-    public boolean add(String term) {
-        return hashTable.add(term);
+    public void addToST(String term) {
+        hashTable.add(term);
     }
 
     @Override

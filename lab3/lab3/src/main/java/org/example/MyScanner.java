@@ -195,7 +195,7 @@ public class MyScanner {
     }
 
     private void handleToken(String token, Pair<Integer, Integer> lineColumn, int category) {
-        this.symbolTable.add(token);
+        this.symbolTable.addToST(token);
         addToPIF(token, lineColumn, category); // Utilizing lineColumn for the token's position
     }
 
