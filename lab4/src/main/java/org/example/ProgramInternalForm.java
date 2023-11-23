@@ -32,14 +32,17 @@ public class ProgramInternalForm {
     @Override
     public String toString() {
         StringBuilder computedString = new StringBuilder();
+
         for (int i = 0; i < this.tokenPositionPair.size(); i++) {
-            computedString.append(
-                            this.tokenPositionPair.get(i).getFirst())
-                    .append("\t==>\t")
-                    .append(this.tokenPositionPair.get(i).getSecond())
-                    .append(" ---> ")
-                    .append(types.get(i))
-                    .append("\n\n");
+            Pair<String, Pair<Integer, Integer>> pair = this.tokenPositionPair.get(i);
+            Integer type = this.types.get(i);
+
+            String token = pair.getFirst();
+            Pair<Integer, Integer> position = pair.getSecond();
+
+            computedString.append("Token/Identifier/Constant: ").append(token)
+                    .append("\nPosition in Symbol Table: ").append(position)
+                    .append("\nCategory: ").append(type).append("\n\n");
         }
 
         return computedString.toString();

@@ -1,13 +1,16 @@
 package org.example;
 
+import lombok.Data;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
 public class ProgramInternalForm {
 
-    private final List<Pair<String, Pair<Integer, Integer>>> tokenPositionPair;
+    private List<Pair<String, Pair<Integer, Integer>>> tokenPositionPair;
 
-    private final List<Integer> types;
+    private List<Integer> types;
 
     public ProgramInternalForm() {
         this.tokenPositionPair = new ArrayList<>();
@@ -17,6 +20,7 @@ public class ProgramInternalForm {
     /**
      * We add a token/identifier/constant to its list + their position in the symbol table, and we also add the category
      * in the list of types
+     *
      * @param pair - pair composed of token/constant/identifier + its position in the ST
      * @param type - the category of the token (2, 3, 4) or constant (0) or identifier (1)
      */
@@ -28,13 +32,17 @@ public class ProgramInternalForm {
     @Override
     public String toString() {
         StringBuilder computedString = new StringBuilder();
+
         for (int i = 0; i < this.tokenPositionPair.size(); i++) {
-            computedString.append(this.tokenPositionPair.get(i).getFirst())
-                    .append(" - ")
-                    .append(this.tokenPositionPair.get(i).getSecond())
-                    .append(" -> ")
-                    .append(types.get(i))
-                    .append("\n");
+            Pair<String, Pair<Integer, Integer>> pair = this.tokenPositionPair.get(i);
+            Integer type = this.types.get(i);
+
+            String token = pair.getFirst();
+            Pair<Integer, Integer> position = pair.getSecond();
+
+            computedString.append("Token/Identifier/Constant: ").append(token)
+                    .append("\nPosition in Symbol Table: ").append(position)
+                    .append("\nCategory: ").append(type).append("\n\n");
         }
 
         return computedString.toString();
