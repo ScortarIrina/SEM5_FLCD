@@ -2,7 +2,7 @@ A B C D
 A
 a b c d
 D
-A a A
+A a A C
 A b B
 B c C
 C c C

@@ -50,12 +50,9 @@ public class MyScanner {
 
 
     /**
-     * This method prepares the array for the real process of splitting the tokens (tokenization).
-     * In this method, we call the method for reading the content of the file, we concatenate the separators into a
-     * simple string, we use that string to split the program into a list of string where we have stored the tokens +
-     * identifiers + constants + the separators from the  created string. In the end, the tokenize method is called,
-     * method which will create a list of pairs which contains the token/identifier/constant + the number of the line
-     * on which it was placed.
+     * This method is responsible for building the initial setup required for tokenization.
+     * It includes reading the file content, consolidating separators into a single string, and dividing the program
+     * elements into a list.
      *
      * @return - the list of pairs composed of tokens/identifiers/constants + a pair which is composed of the number of
      * the line and the number of column on which them were placed
@@ -80,25 +77,23 @@ public class MyScanner {
     }
 
     /**
-     * In this method, we go through each string from tokensToBe and look in what case are we. We can have 3 cases:
-     * 1) the case when we are managing a string
-     * - where we are either at the start of the string, and we start to create it
-     * - we found the end of the string, so we add it to our final list + the line and the column on which
-     * it is situated
-     * 2) the case when we have a new line
-     * - we simply increase the line number in this case
-     * - we make the number column 1 again because we start a new line
-     * 3) the case when:
-     * - if we have a string, we keep compute the string
-     * - if the token is different from " " (space) it means we found a token, and we add it to our final
-     * list + the line and the column on which it is situated, and we increase the column number
-     * Basically, in this method we go through the elements of the program and for each of them, if they compose a
-     * token we add it to the final list, and we compute also the line number on which each of them
-     * are situated. (we somehow tokenize the elems which compose the program)
-     *
+     * This method is responsible for parsing program elements to differentiate between tokens and separators,
+     * while also tracking their positions within the program structure.
+     * <p>
+     * 1) String Management:
+     *      - identifies and handles string cases:
+     *              - begins string creation when encountering the start of a string
+     *              - completes and includes strings in the final list when the end of a string is detected
+     * 2) New Line Handling:
+     *      - increases the line count when a new line is encountered
+     *      - resets the column count to 1 for the start of a new line
+     * 3) Token recognition for non-string cases:
+     *      - tracks tokens and adds them to the final list
+     *      - records their position, including line and column numbers
+     *      - increments the column number for each token encountered (excluding spaces)
+     * <p>
      * @param tokensToBe - the List of program elements (strings) + the separators
-     * @return - the list of pairs composed of tokens + a pair which is composed of the number of
-     * the line and the number of column on which they were placed
+     * @return - list of pairs containing identified tokens and their respective line and column positions
      */
     private List<Pair<String, Pair<Integer, Integer>>> tokenize(List<String> tokensToBe) {
 
@@ -137,19 +132,19 @@ public class MyScanner {
 
     /**
      * In this method, we scan the list of created tokens, and we classify each of them in a category:
-     * a) 0 - for constants
-     * b) 1 - for identifiers
-     * c) 2 - for keywords
-     * d) 3 - for operators
-     * e) 4 - for separators
-     * If the token is a constant or an identifier we add it to the Symbol Table
-     * After figuring out the category, we add them to the ProgramInternalForm + their position in the symbol table
+     * a) 0 - constants
+     * b) 1 - identifiers
+     * c) 2 - keywords
+     * d) 3 - operators
+     * e) 4 - separators
+     * <p>
+     * If the token is a constant or an identifier we add it to the ST.
+     * After figuring out the category, we add them to the PIF + their position in the ST.
      * ( (-1, -1) for anything that is not a constant and an identifier ) + their category (0, 1, 2, 3, 4)
      * If the token is not in any of the categories, we print a message with the line and the column of the error +
      * the token which is invalid.
      */
     public void scan() {
-
         List<Pair<String, Pair<Integer, Integer>>> tokens = createListOfProgramsElems();
         AtomicBoolean lexicalErrorExists = new AtomicBoolean(false);
 
@@ -157,39 +152,63 @@ public class MyScanner {
             return;
         }
 
-        tokens.forEach(t -> {
-            String token = t.getFirst();
+        tokens.forEach(tokenInfo -> {
+            String token = tokenInfo.getFirst();
+            Pair<Integer, Integer> lineColumn = tokenInfo.getSecond();
+
             if (this.keywords.contains(token)) {
-                this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 2);
+                addToPIF(token, new Pair<>(-1, -1), 2); // Add keyword to PIF with category 2 (keywords)
             } else if (this.operators.contains(token)) {
-                this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 3);
+                addToPIF(token, new Pair<>(-1, -1), 3); // Add operator to PIF with category 3 (operators)
             } else if (this.separators.contains(token)) {
-                this.pif.add(new Pair<>(token, new Pair<>(-1, -1)), 4);
-            } else if (Pattern // CONSTANTS
-                    .compile("^0|[-|+][1-9]([0-9])*|'[1-9]'|'[a-zA-Z]'|\"[0-9]*[a-zA-Z ]*\"$")
-                    .matcher(token)
-                    .matches()) {
-                this.symbolTable.add(token);
-                this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 0);
-            } else if (Pattern // IDENTIFIERS
-                    .compile("^([a-zA-Z]|_)|[a-zA-Z_0-9]*")
-                    .matcher(token)
-                    .matches()) {
-                this.symbolTable.add(token);
-                this.pif.add(new Pair<>(token, symbolTable.findPositionOfTerm(token)), 1);
+                addToPIF(token, new Pair<>(-1, -1), 4); // Add separator to PIF with category 4 (separators)
+            } else if (isConstant(token)) {
+                handleToken(token, lineColumn, 0); // Handle constants
+            } else if (isIdentifier(token)) {
+                handleToken(token, lineColumn, 1); // Handle identifiers
             } else {
-                Pair<Integer, Integer> pairLineColumn = t.getSecond();
-                System.out.println("\nLEXICAL ERROR: in file \" " + filePath + "\"" +
-                        "\n\tline: " + pairLineColumn.getFirst() +
-                        "\n\tcolumn: " + pairLineColumn.getSecond() +
-                        "\n\tinvalid token: " + t.getFirst());
+                handleLexicalError(token, lineColumn); // Handle lexical errors
                 lexicalErrorExists.set(true);
             }
         });
 
+
+        printLexicalAnalysisResult(lexicalErrorExists);
+    }
+
+    private void addToPIF(String token, Pair<Integer, Integer> position, int category) {
+        this.pif.addToPIF(new Pair<>(token, position), category);
+    }
+
+    private boolean isConstant(String token) {
+        return Pattern
+                .compile("^0|[-+]?[1-9][0-9]*|'[1-9]'|'[a-zA-Z]'|\"[0-9]*[a-zA-Z ]*\"$")
+                .matcher(token)
+                .matches();
+    }
+
+    private boolean isIdentifier(String token) {
+        return Pattern
+                .compile("^([a-zA-Z]|_)|[a-zA-Z_0-9]*")
+                .matcher(token)
+                .matches();
+    }
+
+    private void handleToken(String token, Pair<Integer, Integer> lineColumn, int category) {
+        this.symbolTable.add(token);
+        addToPIF(token, lineColumn, category); // Utilizing lineColumn for the token's position
+    }
+
+    private void handleLexicalError(String token, Pair<Integer, Integer> lineColumn) {
+        System.out.println("\nLEXICAL ERROR: in file \"" + filePath + "\"" +
+                "\n\tline: " + lineColumn.getFirst() +
+                "\n\tcolumn: " + lineColumn.getSecond() +
+                "\n\tinvalid token: " + token);
+    }
+
+    private void printLexicalAnalysisResult(AtomicBoolean lexicalErrorExists) {
         if (!lexicalErrorExists.get()) {
             System.out.println("\nProgram in file \"" + filePath + "\" is lexically correct.");
         }
-
     }
 }

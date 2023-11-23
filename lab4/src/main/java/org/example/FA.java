@@ -9,7 +9,7 @@ import java.util.*;
 @Data
 public class FA {
     // separator used for splitting strings
-    private final String ELEM_SEPARATOR = " ";
+    private final String separator = " ";
 
     // flag indicating if the FA is deterministic
     private boolean isDeterministic;
@@ -75,7 +75,7 @@ public class FA {
      * @return - list of elements from the same line in the FA
      */
     private List<String> readLineAsList(Scanner scanner) {
-        return new ArrayList<>(List.of(scanner.nextLine().split(this.ELEM_SEPARATOR)));
+        return new ArrayList<>(List.of(scanner.nextLine().split(this.separator)));
     }
 
     /**
@@ -106,14 +106,15 @@ public class FA {
             // extract individual components of the transaction
             String fromState = transitionComponents[0];
             String symbol = transitionComponents[1];
-            String toState = transitionComponents[2];
 
-            // create a pair of states and symbol and symbol representing the transition
-            Pair<String, String> transitionStates = new Pair<>(fromState, symbol);
-            // if the transitionStates key does not exist in the transitions list, create a new set for it
-            transitions.computeIfAbsent(transitionStates, k -> new HashSet<>());
-            // the "toState" is added to the set of states for the transition
-            transitions.get(transitionStates).add(toState);
+            String[] toStates = Arrays.copyOfRange(transitionComponents, 2, transitionComponents.length);
+
+            // create separate transitions for each destination state
+            for (String toState : toStates) {
+                Pair<String, String> transitionState = new Pair<>(fromState, symbol);
+                transitions.computeIfAbsent(transitionState, k -> new HashSet<>());
+                transitions.get(transitionState).add(toState);
+            }
         }
     }
 
@@ -121,8 +122,7 @@ public class FA {
      * Method to check if a transition is valid
      *
      * @param transitionComponents - list of strings containing the separate elements of the transition
-     * @return - TRUE if the transition is valid
-     * FALSE otherwise
+     * @return - TRUE if the transition is valid, FALSE otherwise
      */
     private boolean isValidTransition(String[] transitionComponents) {
         return states.contains(transitionComponents[0]) &&
@@ -133,8 +133,7 @@ public class FA {
     /**
      * Method to check if the FA is deterministic by examining its transitions
      *
-     * @return - TRUE if it is deterministic
-     * FALSE otherwise
+     * @return - TRUE if it is deterministic, FALSE otherwise
      */
     public boolean checkIfDeterministic() {
         return this.transitions
@@ -150,29 +149,34 @@ public class FA {
      */
     public String writeTransitions() {
         StringBuilder builder = new StringBuilder();
-        builder.append("Transitions: \n");
 
         // iterate through each transition and constructs a formatted string
-        transitions.forEach((K, V) -> {
-            builder.append("(")
-                    .append(K.getFirst())
-                    .append(", ")
-                    .append(K.getSecond())
-                    .append(") -> ")
-                    .append(V)
-                    .append("\n");
+        transitions.forEach((transition, toStates) -> {
+            String fromState = transition.getFirst();
+            String symbol = transition.getSecond();
+
+            // handle each destination state separately
+            for (String toState : toStates) {
+                builder.append("(")
+                        .append(fromState)
+                        .append(", ")
+                        .append(symbol)
+                        .append(") -> ")
+                        .append(toState)
+                        .append("\n");
+            }
         });
 
         return builder.toString();
     }
 
+
     /**
-     * Method to check if a given sequence is accepted by the FA (if we start from the initial state and by going
-     * through transitions we get to the final state, then the sequence is valid).
+     * Determines whether a given sequence is accepted by the FA by transitioning from the initial state through
+     * defined transitions to reach a final state.
      *
-     * @param sequence - the sequence the user gave as an input
-     * @return - TRUE if the sequence is valid
-     * FALSE otherwise
+     * @param sequence - the sequence provided by the user
+     * @return - TRUE if the sequence is valid, FALSE otherwise
      */
     public boolean checkSequence(String sequence) {
         // if the sequence is empty, check if the initial state is a final state

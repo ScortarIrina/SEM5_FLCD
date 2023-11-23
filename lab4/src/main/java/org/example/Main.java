@@ -24,9 +24,9 @@ public class Main {
         System.out.println("0. Exit");
         System.out.println("1. States");
         System.out.println("2. Alphabet");
-        System.out.println("3. Final states");
-        System.out.println("4. Transitions");
-        System.out.println("5. Initial state");
+        System.out.println("3. Initial state");
+        System.out.println("4. Final states");
+        System.out.println("5. Transitions");
         System.out.println("6. Is it deterministic?");
         System.out.println("7. Check if sequence is accepted by DFA");
     }
@@ -35,9 +35,8 @@ public class Main {
 
         FA finiteAutomaton = new FA("/Users/irinascortar/Desktop/JavaProjects/SEM5_FLCD/lab4/src/main/java/org/example/IO/FA.txt");
 
-        System.out.println("FA read from file.\n");
         printMenu();
-        System.out.println("\nYour option: ");
+        System.out.print("\nChoose an option (0-7): ");
 
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
@@ -46,40 +45,37 @@ public class Main {
 
             switch (option) {
                 case 1:
-                    System.out.println("States: ");
+                    System.out.print("The states of the FA are: ");
                     System.out.println(finiteAutomaton.getStates());
-                    System.out.println();
                     break;
 
                 case 2:
-                    System.out.println("Alphabet: ");
+                    System.out.print("The elements of the alphabet are: ");
                     System.out.println(finiteAutomaton.getAlphabet());
-                    System.out.println();
                     break;
 
                 case 3:
-                    System.out.println("Final states: ");
-                    System.out.println(finiteAutomaton.getFinalStates());
-                    System.out.println();
+                    System.out.print("The initial state of the FA is: ");
+                    System.out.println(finiteAutomaton.getInitialState());
                     break;
 
                 case 4:
-                    System.out.println(finiteAutomaton.writeTransitions());
+                    System.out.print("The final states of the FAQ are: ");
+                    System.out.println(finiteAutomaton.getFinalStates());
                     break;
 
                 case 5:
-                    System.out.println("Initial state: ");
-                    System.out.println(finiteAutomaton.getInitialState());
-                    System.out.println();
+                    System.out.print("The transitions of the FA are: ");
+                    System.out.println(finiteAutomaton.writeTransitions());
                     break;
 
                 case 6:
-                    System.out.println("Is it deterministic?");
+                    System.out.print("Is it deterministic? ");
                     System.out.println(finiteAutomaton.checkIfDeterministic());
                     break;
 
                 case 7: {
-                    System.out.println("Your sequence: ");
+                    System.out.print("Your sequence: ");
                     Scanner scanner2 = new Scanner(System.in);
                     String sequence = scanner2.nextLine();
 
@@ -97,7 +93,7 @@ public class Main {
             }
             System.out.println();
             printMenu();
-            System.out.println("Your option: ");
+            System.out.print("Choose an option (0-7): ");
             option = scanner.nextInt();
         }
     }
@@ -113,7 +109,7 @@ public class Main {
         System.out.println("\n0. Exit");
         System.out.println("1. Finite automaton");
         System.out.println("2. Scanner");
-        System.out.println("\nYour option: ");
+        System.out.print("\nChoose an option (0-2): ");
 
         Scanner scanner = new Scanner(System.in);
         int option = scanner.nextInt();
