@@ -65,7 +65,7 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.print("The transitions of the FA are: ");
+                    System.out.print("The transitions of the FA are:\n");
                     System.out.println(finiteAutomaton.writeTransitions());
                     break;
 

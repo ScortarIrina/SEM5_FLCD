@@ -150,12 +150,32 @@ public class FA {
     public String writeTransitions() {
         StringBuilder builder = new StringBuilder();
 
-        // iterate through each transition and constructs a formatted string
+        // Create a map to group transitions by state and symbol
+        Map<Pair<String, String>, List<String>> groupedTransitions = new HashMap<>();
+
+        // Iterate through each transition and group them by (fromState, symbol) pair
         transitions.forEach((transition, toStates) -> {
             String fromState = transition.getFirst();
             String symbol = transition.getSecond();
 
-            // handle each destination state separately
+            // Create a pair representing the transition
+            Pair<String, String> transitionPair = new Pair<>(fromState, symbol);
+
+            // Create or get the list of transitions for this pair
+            groupedTransitions.computeIfAbsent(transitionPair, k -> new ArrayList<>());
+
+            // Add each destination state for this transition pair
+            for (String toState : toStates) {
+                groupedTransitions.get(transitionPair).add(toState);
+            }
+        });
+
+        // Iterate through the grouped transitions and construct the formatted string
+        groupedTransitions.forEach((transition, toStates) -> {
+            String fromState = transition.getFirst();
+            String symbol = transition.getSecond();
+
+            // Handle each destination state separately
             for (String toState : toStates) {
                 builder.append("(")
                         .append(fromState)
@@ -171,6 +191,7 @@ public class FA {
     }
 
 
+
     /**
      * Determines whether a given sequence is accepted by the FA by transitioning from the initial state through
      * defined transitions to reach a final state.
@@ -184,24 +205,35 @@ public class FA {
             return finalStates.contains(initialState);
         }
 
-        // set the initial state for sequence processing
-        String state = initialState;
+        // set of possible current states for sequence processing
+        Set<String> states = new HashSet<>();
+        states.add(initialState);
 
-        // process each symbol in the sequence to determine the final state
-        for (int i = 0; i < sequence.length(); ++i) {
-            // create a transition key
-            Pair<String, String> key = new Pair<>(state, String.valueOf(sequence.charAt(i)));
+        // process each symbol in the sequence to determine the possible final states
+        for (char symbol : sequence.toCharArray()) {
+            Set<String> nextStates = new HashSet<>();
 
-            // if the key exists in transitions, update the current state
-            // otherwise the sequence is invalid
-            if (transitions.containsKey(key)) {
-                state = transitions.get(key).iterator().next();
-            } else {
-                return false;
+            for (String state : states) {
+                Pair<String, String> key = new Pair<>(state, String.valueOf(symbol));
+                if (transitions.containsKey(key)) {
+                    nextStates.addAll(transitions.get(key));
+                }
+            }
+
+            if (nextStates.isEmpty()) {
+                return false; // no transitions available for this symbol from current states
+            }
+
+            states = nextStates;
+        }
+
+        // check if any of the final states are in the possible final states set
+        for (String state : states) {
+            if (finalStates.contains(state)) {
+                return true; // at least one final state reached
             }
         }
 
-        // check if the final state of the given sequence is the actual final state from the FA
-        return finalStates.contains(state);
+        return false; // none of the final states reached
     }
 }
