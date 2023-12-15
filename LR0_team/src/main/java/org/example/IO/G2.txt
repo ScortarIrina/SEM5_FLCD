@@ -1,0 +1,18 @@
+program compoundStmt declarationStmt assignmentStmt ifStmt whileStmt ioStmt simpleType arrayDecl expression term factor stmtList condition relation stmt
+identifier int string char [ ] ; = / * + - ( ) intConst { } read print if else < <= == != >= > while
+program
+program::=compoundStmt
+compoundStmt::=declarationStmt|assignmentStmt|ifStmt|whileStmt|ioStmt|compoundStmt
+declarationStmt::=simpleType identifier ;|arrayDecl
+simpleType::=int|string|char
+arrayDecl::=simpleType identifier [ ] ;
+assignmentStmt::=identifier = expression ;
+expression::=expression + term|expression - term|term
+term::=term * factor|term / factor|factor
+factor::=( expression )|identifier|intConst
+stmtList::=stmt|stmt ; stmtList
+ioStmt::=read ( identifier ) ;|print ( identifier ) ;
+ifStmt::=if ( condition ) compoundStmt|if ( condition ) compoundStmt else compoundStmt
+condition::=expression relation expression
+relation::=<|<=|==|!=|>=|>
+whileStmt::=while ( condition ) compoundStmt
