@@ -25,13 +25,21 @@ public class Item {
         this.dotLocation = dotPosition;
     }
 
+    public boolean dotIsLast(){
+        return this.dotLocation == this.rightHandSide.size();
+    }
+
     @Override
     public String toString() {
-        String left = String.join("", leftHandSide);
-        String right1 = String.join("", rightHandSide.subList(0, dotLocation));
-        String right2 = String.join("", rightHandSide.subList(dotLocation, rightHandSide.size()));
+        List<String> rightHandSide1 = this.rightHandSide.subList(0, dotLocation);
 
-        return left + "->" + right1 + "." + right2;
+        String stringRightHandSide1 = String.join("", rightHandSide1);
+
+        List<String> rightHandSide2 = this.rightHandSide.subList(dotLocation, this.rightHandSide.size());
+
+        String stringLeftHandSide2 = String.join("", rightHandSide2);
+
+        return leftHandSide + "->" + stringRightHandSide1 + "." + stringLeftHandSide2;
     }
 
 
@@ -41,24 +49,8 @@ public class Item {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        // Check if the objects are the same instance
-        if (this == obj) {
-            return true;
-        }
-
-        // Check if the other object is an instance of Item
-        if (obj instanceof Item otherItem) {
-
-            // Compare the fields for equality using Objects.equals
-            return Objects.equals(leftHandSide, otherItem.leftHandSide)
-                    && Objects.equals(rightHandSide, otherItem.rightHandSide)
-                    && Objects.equals(dotLocation, otherItem.dotLocation);
-        }
-
-        // If the other object is not an instance of Item, they are not equal
-        return false;
+    public boolean equals(Object item) {
+        return item instanceof Item && Objects.equals(((Item)item).leftHandSide, this.leftHandSide) &&
+                ((Item)item).rightHandSide == rightHandSide && Objects.equals(((Item)item).dotLocation, this.dotLocation);
     }
-
-
 }

@@ -1,0 +1,22 @@
+States
+
+State transitions
+Pair(firstElement=0, secondElement=S) -> 1
+Pair(firstElement=0, secondElement=A) -> 2
+Pair(firstElement=0, secondElement=a) -> 3
+Pair(firstElement=0, secondElement=b) -> 4
+Pair(firstElement=2, secondElement=A) -> 5
+Pair(firstElement=2, secondElement=a) -> 3
+Pair(firstElement=2, secondElement=b) -> 4
+Pair(firstElement=3, secondElement=A) -> 6
+Pair(firstElement=3, secondElement=a) -> 3
+Pair(firstElement=3, secondElement=b) -> 4
+Parsing Table: 
+Row: stateIndex= 0, action='SHIFT', reduceNonTerminal='null', reduceContent = null, shifts = [Pair(firstElement=S, secondElement=1), Pair(firstElement=A, secondElement=2), Pair(firstElement=a, secondElement=3), Pair(firstElement=b, secondElement=4)]
+Row: stateIndex= 1, action='ACCEPT', reduceNonTerminal='null', reduceContent = null, shifts = null
+Row: stateIndex= 2, action='SHIFT', reduceNonTerminal='null', reduceContent = null, shifts = [Pair(firstElement=A, secondElement=5), Pair(firstElement=a, secondElement=3), Pair(firstElement=b, secondElement=4)]
+Row: stateIndex= 3, action='SHIFT', reduceNonTerminal='null', reduceContent = null, shifts = [Pair(firstElement=A, secondElement=6), Pair(firstElement=a, secondElement=3), Pair(firstElement=b, secondElement=4)]
+Row: stateIndex= 4, action='REDUCE', reduceNonTerminal='A', reduceContent = [b], shifts = null
+Row: stateIndex= 5, action='REDUCE', reduceNonTerminal='S', reduceContent = [A, A], shifts = null
+Row: stateIndex= 6, action='REDUCE', reduceNonTerminal='A', reduceContent = [a, A], shifts = null
+

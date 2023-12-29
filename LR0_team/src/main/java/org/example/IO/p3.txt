@@ -1,0 +1,18 @@
+int n;
+array[1000] x;
+int s;
+int i;
+
+read(n);
+
+sum = 0;
+i = 0;
+
+while (i < n) {
+	read(x[i]);
+	s = s + x;
+	i = i + 1;
+}
+
+print("The sum is ");
+print(s);

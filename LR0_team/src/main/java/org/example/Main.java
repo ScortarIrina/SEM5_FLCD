@@ -1,8 +1,9 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import org.example.Scanner.MyScanner;
+
+import java.io.*;
+import java.util.*;
 
 public class Main {
     public static void printMenu() {
@@ -14,10 +15,17 @@ public class Main {
         System.out.println("4. To print all productions, press 4.");
         System.out.println("5. To print all productions for a non-terminal, press 5.");
         System.out.println("6. To check if the grammar is a context-free grammar (CFG), press 6.");
-        System.out.println("7. To run LR0, press 7.");
-        System.out.println("8. To run all tests for the grammar and LR0, press 8.");
+        System.out.println("7. To run LR0 for G1.txt and parse sequence.txt, press 7.");
+        System.out.println("8. To run LR0 for G2.txt, press 8.");
+        System.out.println("9. To run all tests for the grammar and LR0, press 9.");
     }
 
+    public static void printMenuParser() {
+        System.out.println("\n0. Exit");
+        System.out.println("1. Parse p1.txt");
+        System.out.println("2. Parse p2.txt");
+        System.out.println("3. Parse p3.txt\n");
+    }
 
     public static void runGrammarMenu() throws Exception {
         Grammar grammar = new Grammar("src/main/java/org/example/IO/G1.txt");
@@ -60,20 +68,119 @@ public class Main {
                     System.out.println("The grammar is not CFG.");
                 }
             } else if (option == 7) {
-                Grammar g = new Grammar("src/main/java/org/example/IO/G1.txt");
-                LR0 lr0 = new LR0(g);
-                List<State> states = lr0.getCanonicalCollectionForGrammar().getStates();
+                emptyFile("src/main/java/org/example/IO/out1.txt");
 
-                System.out.println("LR(0) Canonical Collection States:");
+                Grammar grammar1 = new Grammar("src/main/java/org/example/IO/G1.txt");
+                LR0 lrAlg = new LR0(grammar1);
 
-                int length = states.size();
-                for (int i = 0; i < length; i++) {
-                    System.out.println("State " + i + ":");
-                    State state = states.get(i);
-                    System.out.println("\t" + state.getItems());
-                    System.out.println();
+                CanonicalCollection canonicalCollection = lrAlg.getCanonicalCollectionForGrammar();
+
+                System.out.println("States");
+                writeToFile("src/main/java/org/example/IO/out1.txt", "States");
+
+                for (int i = 0; i < canonicalCollection.getStates().size(); i++) {
+                    System.out.println(i + " " + canonicalCollection.getStates().get(i));
                 }
+
+                System.out.println("\nState.State transitions");
+                writeToFile("src/main/java/org/example/IO/out1.txt", "\nState transitions");
+
+                for (Map.Entry<Pair<Integer, String>, Integer> entry : canonicalCollection.getAdjacencyList().entrySet()) {
+                    System.out.println(entry.getKey() + " -> " + entry.getValue());
+                    writeToFile("src/main/java/org/example/IO/out1.txt", entry.getKey() + " -> " + entry.getValue());
+                }
+
+                System.out.println();
+
+                ParsingTable parsingTable = lrAlg.getParsingTable(canonicalCollection);
+                if (parsingTable.getElements().isEmpty()) {
+                    System.out.println("We have conflicts in the parsing table so we can't go further with the algorithm");
+                    writeToFile("src/main/java/org/example/IO/out1.txt", "We have conflicts in the parsing table so we can't go further with the algorithm");
+                } else {
+                    System.out.println(parsingTable);
+                    writeToFile("src/main/java/org/example/IO/out1.txt", parsingTable.toString());
+                }
+
+                Stack<String> word = readSequence("src/main/java/org/example/IO/sequence.txt");
+
+                lrAlg.parse(word, parsingTable, "src/main/java/org/example/IO/out1.txt");
+
+                break;
             } else if (option == 8) {
+                Grammar grammar2 = new Grammar("src/main/java/org/example/IO/G2.txt");
+                LR0 lrAlg2 = new LR0(grammar2);
+
+                CanonicalCollection canonicalCollection2 = lrAlg2.getCanonicalCollectionForGrammar();
+
+                System.out.println("States");
+                for (int i = 0; i < canonicalCollection2.getStates().size(); i++) {
+                    System.out.println(i + " " + canonicalCollection2.getStates().get(i));
+                }
+
+                System.out.println("\nState.State transitions");
+                for (Map.Entry<Pair<Integer, String>, Integer> entry : canonicalCollection2.getAdjacencyList().entrySet()) {
+                    System.out.println(entry.getKey() + " -> " + entry.getValue());
+                }
+                System.out.println();
+
+                ParsingTable parsingTable2 = lrAlg2.getParsingTable(canonicalCollection2);
+                if (parsingTable2.getElements().isEmpty()) {
+                    System.out.println("We have conflicts in the parsing table so we can't go further with the algorithm");
+                    writeToFile("src/main/java/org/example/IO/out2.txt", "We have conflicts in the parsing table so we can't go further with the algorithm");
+                } else {
+                    System.out.println(parsingTable2);
+                }
+
+
+                boolean stop = false;
+                while (!stop) {
+                    printMenuParser();
+                    Scanner keyboard2 = new Scanner(System.in);
+                    System.out.print("Your option: ");
+                    int option2 = keyboard2.nextInt();
+
+                    switch (option2) {
+                        case 0:
+                            stop = true;
+                            break;
+                        case 1:
+                            emptyFile("src/main/java/org/example/IO/out1.txt");
+                            MyScanner scanner2 = new MyScanner("src/main/java/org/example/IO/p1.txt");
+                            scanner2.scan();
+                            printToFile("src/main/java/org/example/IO/p1.txt".replace(".txt", "PIF.txt"), scanner2.getPif());
+
+                            Stack<String> word2 = readFirstElemFromFile("src/main/java/org/example/IO/p1PIF.txt");
+
+                            lrAlg2.parse(word2, parsingTable2, "src/main/java/org/example/IO/out2.txt");
+                            break;
+
+                        case 2:
+                            emptyFile("src/main/java/org/example/IO/out2.txt");
+                            MyScanner scanner3 = new MyScanner("src/main/java/org/example/IO/p2.txt");
+                            scanner3.scan();
+                            printToFile("src/main/java/org/example/IO/p2.txt".replace(".txt", "PIF.txt"), scanner3.getPif());
+
+                            Stack<String> word3 = readFirstElemFromFile("src/main/java/org/example/IO/p2PIF.txt");
+
+                            lrAlg2.parse(word3, parsingTable2, "src/main/java/org/example/IO/out2.txt");
+                            break;
+
+                        case 3:
+                            emptyFile("src/main/java/org/example/IO/out3.txt");
+                            MyScanner scanner4 = new MyScanner("src/main/java/org/example/IO/p3.txt");
+                            scanner4.scan();
+                            printToFile("src/main/java/org/example/IO/p3.txt".replace(".txt", "PIF.txt"), scanner4.getPif());
+
+                            Stack<String> word4 = readFirstElemFromFile("src/main/java/org/example/IO/p3PIF.txt");
+
+                            lrAlg2.parse(word4, parsingTable2, "src/main/java/org/example/IO/out3.txt");
+                            break;
+                    }
+                }
+
+
+                break;
+            } else if (option == 9) {
                 Test test = new Test();
                 test.testClosure();
                 test.testGoto();
@@ -84,6 +191,63 @@ public class Main {
         }
     }
 
+    public static void emptyFile(String file) throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(file);
+        writer.print("");
+        writer.close();
+    }
+
+    public static Stack<String> readFirstElemFromFile(String filename) {
+        BufferedReader reader;
+        Stack<String> wordStack = new Stack<String>();
+        ArrayList<String> normal = new ArrayList<>();
+        try {
+            reader = new BufferedReader(new FileReader(filename));
+            String line = reader.readLine();
+            while (line != null) {
+                String[] split = line.split("\\s+");
+                normal.add(split[0]);
+                line = reader.readLine();
+            }
+            for (int i = normal.size() - 1; i >= 0; i--) {
+                wordStack.add(normal.get(i));
+            }
+            return wordStack;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static void writeToFile(String file, String line) throws IOException {
+        FileWriter fw = new FileWriter(file, true);
+        BufferedWriter bw = new BufferedWriter(fw);
+        bw.write(line);
+        bw.newLine();
+        bw.close();
+    }
+
+    private static void printToFile(String filePath, Object object) {
+        try (PrintStream printStream = new PrintStream(filePath)) {
+            printStream.println(object);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static Stack<String> readSequence(String filename) {
+        BufferedReader reader;
+        Stack<String> wordStack = new Stack<>();
+        try {
+            reader = new BufferedReader(new FileReader(filename));
+            String line = reader.readLine();
+            if (line != null) {
+                Arrays.stream(new StringBuilder(line).reverse().toString().split("")).forEach(wordStack::push);
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return wordStack;
+    }
 
     public static void main(String[] args) throws Exception {
         runGrammarMenu();

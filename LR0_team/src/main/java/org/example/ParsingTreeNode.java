@@ -16,31 +16,31 @@ public class ParsingTreeNode {
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
 
         stringBuilder.append(index).append(": \n");
-        stringBuilder.append("-symbol = ").append(symbol).append('\n');
+        stringBuilder.append("-- symbol = ").append(symbol).append('\n');
 
         if (parent != null) {
-            stringBuilder.append("-parent = ").append(parent.getIndex()).append('\n');
+            stringBuilder.append("-- parent = ").append(parent.getIndex()).append('\n');
         } else {
-            stringBuilder.append("-parent = -1\n");
+            stringBuilder.append("-- parent = -1\n");
         }
 
         if (sibling != null) {
-            stringBuilder.append("-sibling = ").append(sibling.getIndex()).append('\n');
+            stringBuilder.append("-- sibling = ").append(sibling.getIndex()).append('\n');
         } else {
-            stringBuilder.append("-sibling = -1\n");
+            stringBuilder.append("-- sibling = -1\n");
         }
 
         if (child != null) {
-            stringBuilder.append("-child = ").append(child.getIndex()).append('\n');
+            stringBuilder.append("-- child = ").append(child.getIndex()).append('\n');
         } else {
-            stringBuilder.append("-child = -1\n");
+            stringBuilder.append("-- child = -1\n");
         }
 
-        stringBuilder.append("-depth = ").append(depth).append('\n');
+        stringBuilder.append("-- depth = ").append(depth).append('\n');
 
 
         return stringBuilder.toString();

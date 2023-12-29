@@ -7,22 +7,14 @@ import java.util.List;
 
 @Data
 public class ParsingTableRow {
-    public enum ActionType { // enum representing different parsing action types
-        SHIFT,
-        REDUCE,
-        ACCEPT,
-        SHIFT_REDUCE_CONFLICT,
-        REDUCE_REDUCE_CONFLICT
-    }
-
     private int index; // index of the parsing state
-    private ActionType action; // type of action associated with the parsing state
+    private StateActionType action; // type of action associated with the parsing state
     private String reductionNonTerminal; // non-terminal to which reduction is applied
-    private List<String> reductionSymbols = new ArrayList<>(); // what the reduction production contains
-    private List<Pair<String, Integer>> shiftActions = new ArrayList<>(); // shifts associated with the parsing state
+    private List<String> reductionSymbols; // what the reduction production contains
+    private List<Pair<String, Integer>> shiftActions; // shifts associated with the parsing state
 
 
-    public ParsingTableRow(){
+    public ParsingTableRow() {
         this.reductionSymbols = new ArrayList<>();
         this.shiftActions = new ArrayList<>();
     }
@@ -36,16 +28,13 @@ public class ParsingTableRow {
 
     // string representation of the parsing table row
     @Override
-    public String toString() {
-        StringBuilder row = new StringBuilder();
-
-        row.append(index).append(": ")
-                .append("action = ").append(action)
-                .append(", reduction Non-Terminal = ").append(reductionNonTerminal)
-                .append(", reduction symbols = ").append(reductionSymbols)
-                .append(", shifts = ").append(shiftActions).append('\n').append('\n');
-
-        return row.toString();
+    public String toString(){
+        return "Row: " +
+                "stateIndex= " + index +
+                ", action='" + action + '\'' +
+                ", reduceNonTerminal='" + reductionNonTerminal + '\'' +
+                ", reduceContent = " + reductionSymbols +
+                ", shifts = " + shiftActions;
     }
 }
 
