@@ -199,7 +199,7 @@ public class Main {
 
     public static Stack<String> readFirstElemFromFile(String filename) {
         BufferedReader reader;
-        Stack<String> wordStack = new Stack<String>();
+        Stack<String> wordStack = new Stack<>();
         ArrayList<String> normal = new ArrayList<>();
         try {
             reader = new BufferedReader(new FileReader(filename));

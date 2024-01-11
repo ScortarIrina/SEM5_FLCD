@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2bf5c39-f7c1-4a7f-83ef-2ef69b215702" name="Changes" comment="lab7 + lab8">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/out1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/out1.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/out2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/out2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1PIF.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1PIF.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p2PIF.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2PIF.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/sequence.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/sequence.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1a/lab1a.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1a/~$lab1a.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1b/lab1b.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab1b/~$view-Stefi.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/asdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/documentation.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/src/main/java/org/example/Documentation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/src/main/java/org/example/HashTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/src/main/java/org/example/SymbolTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/src/main/resources/documentation.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/target/classes/org/example/HashTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/target/classes/org/example/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/target/classes/org/example/SymbolTable.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab2/lab2/~$cumentation.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/.idea/workspace.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/HashTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p1/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p1/p1PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p1/p1ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p1err/p1err.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p1err/p1errPIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p1err/p1errST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p2/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p2/p2PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p2/p2ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p3/p3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p3/p3PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p3/p3ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p4/p4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p4/p4PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/IO/p4/p4ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/MyScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/ProgramInternalForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/java/org/example/SymbolTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab3/lab3/src/main/resources/Documentation.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/Github.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/FA.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/HashTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/FA.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p1/p1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p1/p1PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p1/p1ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p1err/p1err.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p1err/p1errPIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p1err/p1errST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p2/p2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p2/p2PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p2/p2ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p3/p3.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p3/p3PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p3/p3ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p4/p4.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p4/p4PIF.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/IO/p4/p4ST.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/MyScanner.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/Pair.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/ProgramInternalForm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab4/src/main/java/org/example/SymbolTable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/src/main/java/org/example/Grammar.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/src/main/java/org/example/IO/G1.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/src/main/java/org/example/IO/G2.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/src/main/java/org/example/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lab5/src/main/java/org/example/task.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="projectConfigVersion" value="5" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/org/example/ParsingTableRow.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.2.5/bin/php" />
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2ZTm4KA52I7QytlnB0peexuPB6X" />
+  <component name="ProjectViewState">
+    <option name="autoscrollFromSource" value="true" />
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.22851562",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "reference.projectsettings.compiler.annotationProcessors",
+    "show.migrate.to.gradle.popup": "false",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="org.example" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="org.example.Main" />
+      <module name="LR0_team" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-17.0.9-corretto-17.0.9-3183f394aec4-5f3ff201" />
+        <option value="jdk-19.0.2-corretto-19.0.2-3183f394aec4-a73a9aee" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2bf5c39-f7c1-4a7f-83ef-2ef69b215702" name="Changes" comment="" />
+      <created>1702454252543</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1702454252543</updated>
+      <workItem from="1702454253751" duration="3778000" />
+      <workItem from="1702551766841" duration="19783000" />
+      <workItem from="1703151319103" duration="2817000" />
+      <workItem from="1703177810677" duration="1380000" />
+      <workItem from="1703179202950" duration="3768000" />
+      <workItem from="1703189297284" duration="554000" />
+      <workItem from="1703189865651" duration="607000" />
+      <workItem from="1703190989844" duration="4200000" />
+      <workItem from="1703847485670" duration="9617000" />
+      <workItem from="1704550701116" duration="114000" />
+      <workItem from="1704866803552" duration="88000" />
+      <workItem from="1704990221797" duration="5076000" />
+    </task>
+    <task id="LOCAL-00001" summary="lab5 + lab6 (LR0)">
+      <option name="closed" value="true" />
+      <created>1702643921290</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1702643921290</updated>
+    </task>
+    <task id="LOCAL-00002" summary="lab5 + lab6 (LR0)">
+      <option name="closed" value="true" />
+      <created>1703151531102</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1703151531102</updated>
+    </task>
+    <task id="LOCAL-00003" summary="lab7">
+      <option name="closed" value="true" />
+      <created>1703175962168</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1703175962168</updated>
+    </task>
+    <task id="LOCAL-00004" summary="lab7">
+      <option name="closed" value="true" />
+      <created>1703186659874</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703186659874</updated>
+    </task>
+    <task id="LOCAL-00005" summary="lab7">
+      <option name="closed" value="true" />
+      <created>1703853028624</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1703853028624</updated>
+    </task>
+    <task id="LOCAL-00006" summary="lab7 + lab8">
+      <option name="closed" value="true" />
+      <created>1704994815577</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1704994815577</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="lab5 + lab6 (LR0)" />
+    <MESSAGE value="lab7" />
+    <MESSAGE value="lab7 + lab8" />
+    <option name="LAST_COMMIT_MESSAGE" value="lab7 + lab8" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
+          <line>329</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>70</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
+          <line>276</line>
+          <option name="timeStamp" value="28" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

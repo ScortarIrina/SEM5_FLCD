@@ -1,1 +1,0 @@
-We have conflicts in the parsing table so we can't go further with the algorithm

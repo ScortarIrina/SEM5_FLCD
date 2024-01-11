@@ -274,7 +274,13 @@ public class LR0 {
                         lastSymbol = symbol;
                         workingStack.push(new Pair<>(lastSymbol, stateIndex));
                     } else {
-                        throw new NullPointerException("Action is SHIFT but there are no matching states");
+                        // Print the error message instead of throwing an exception
+                        System.out.println("ERROR at state " + stateIndex + " - before symbol " + onErrorSymbol);
+                        System.out.println(lastRow);
+                        writeToFile(filePath, "ERROR at state " + stateIndex + " - before symbol " + onErrorSymbol);
+                        writeToFile(filePath, lastRow.toString());
+
+                        sem = false; // Stop parsing after an error
                     }
                 } else if (entry.getAction().equals(StateActionType.REDUCE)) {
 
