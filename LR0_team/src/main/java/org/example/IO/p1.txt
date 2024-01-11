@@ -1,6 +1,4 @@
-start
-{
-	int a;
+int a;
 	int b;
 	int c;
 	read ( a );
@@ -25,6 +23,5 @@ start
 	}
 	string text;
 	text = "Maximum is ";
-	write ( text );
-	write ( maxim );
-}
+	print ( text );
+	print ( maxim );

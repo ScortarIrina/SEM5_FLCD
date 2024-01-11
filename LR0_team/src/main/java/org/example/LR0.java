@@ -130,7 +130,9 @@ public class LR0 {
                         indexState = collection.getStates().size() - 1;
                     }
 //                    System.out.println("(" + index + ", " + symbol + ") -> " + indexState);
-                    collection.connectStates(index, symbol, indexState);
+                    if (!Objects.equals(symbol, "")) {
+                        collection.connectStates(index, symbol, indexState);
+                    }
                 }
             }
             ++index;
@@ -267,6 +269,10 @@ public class LR0 {
                     // Look into the parsing table at that state, and find out
                     // From it through what state, we can obtain the symbol popped from the input stack
                     String symbol = inputStack.pop();
+
+                    System.out.println("Shift Actions: " + entry.getShiftActions());
+                    System.out.println("Current Symbol: " + symbol);
+
                     Pair<String, Integer> state = entry.getShiftActions().stream().filter(it -> it.getFirstElement().equals(symbol)).findAny().orElse(null);
 
                     if (state != null) {

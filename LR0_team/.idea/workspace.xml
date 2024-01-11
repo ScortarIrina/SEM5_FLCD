@@ -4,16 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f2bf5c39-f7c1-4a7f-83ef-2ef69b215702" name="Changes" comment="lab7 + lab8">
+    <list default="true" id="f2bf5c39-f7c1-4a7f-83ef-2ef69b215702" name="Changes" comment="FIX: lab8 - no exception is thrown when a sequence is not accepted by the grammar, but a message is displayed">
       <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/out1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/out1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/out2.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/out2.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/out3.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/out3.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p1PIF.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p1PIF.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p2PIF.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p2PIF.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/p3PIF.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/p3PIF.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/IO/sequence.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/IO/sequence.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/LR0.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/LR0.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Pair.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Pair.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/ParsingTableRow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ParsingTableRow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Scanner/MyScanner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Scanner/MyScanner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab1a/lab1a.pdf" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../lab1a/~$lab1a.docx" beforeDir="false" />
@@ -197,7 +202,7 @@
       <workItem from="1703847485670" duration="9617000" />
       <workItem from="1704550701116" duration="114000" />
       <workItem from="1704866803552" duration="88000" />
-      <workItem from="1704990221797" duration="5076000" />
+      <workItem from="1704990221797" duration="10222000" />
     </task>
     <task id="LOCAL-00001" summary="lab5 + lab6 (LR0)">
       <option name="closed" value="true" />
@@ -247,7 +252,15 @@
       <option name="project" value="LOCAL" />
       <updated>1704994815577</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="FIX: lab8 - no exception is thrown when a sequence is not accepted by the grammar, but a message is displayed">
+      <option name="closed" value="true" />
+      <created>1704995729494</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704995729495</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -280,25 +293,64 @@
     <MESSAGE value="lab5 + lab6 (LR0)" />
     <MESSAGE value="lab7" />
     <MESSAGE value="lab7 + lab8" />
-    <option name="LAST_COMMIT_MESSAGE" value="lab7 + lab8" />
+    <MESSAGE value="FIX: lab8 - no exception is thrown when a sequence is not accepted by the grammar, but a message is displayed" />
+    <option name="LAST_COMMIT_MESSAGE" value="FIX: lab8 - no exception is thrown when a sequence is not accepted by the grammar, but a message is displayed" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
-          <line>329</line>
+          <line>341</line>
           <option name="timeStamp" value="7" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
           <line>70</line>
           <option name="timeStamp" value="26" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
+        <line-breakpoint type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
-          <line>276</line>
+          <line>282</line>
           <option name="timeStamp" value="28" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/Main.java</url>
+          <line>147</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
+          <line>275</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
+          <line>213</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/CanonicalCollection.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
+          <line>132</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/LR0.java</url>
+          <line>117</line>
+          <option name="timeStamp" value="44" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/org/example/State.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

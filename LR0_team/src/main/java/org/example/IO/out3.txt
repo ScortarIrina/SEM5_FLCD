@@ -1,0 +1,2 @@
+ERROR at state 0 - before symbol int
+Row: stateIndex= 0, action='SHIFT', reduceNonTerminal='null', reduceContent = null, shifts = [Pair(firstElement=program, secondElement=1), Pair(firstElement=start, secondElement=2)]

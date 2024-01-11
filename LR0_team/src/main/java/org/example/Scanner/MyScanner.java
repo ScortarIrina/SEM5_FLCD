@@ -125,6 +125,10 @@ public class MyScanner {
         int numberColumn = 1;
 
         for (String t : tokensToBe) {
+            if (t.isEmpty()) {
+                continue; // Skip empty strings
+            }
+
             switch (t) {
                 case "\"":
                     createdString.append(t);
@@ -184,7 +188,7 @@ public class MyScanner {
     }
 
     /**
-     * In this method, we scan the list of created tokens and we classify each of them in a category:
+     * In this method, we scan the list of created tokens, and we classify each of them in a category:
      * a) 2 - for reservedWords
      * b) 3 - for operators
      * c) 4 - for separators
