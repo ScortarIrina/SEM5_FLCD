@@ -8,7 +8,7 @@ import java.util.List;
 
 @Data
 public class ParsingTable {
-    private List<ParsingTableRow> elements; // the entries of the table will be saved in a list of 'ParsingTableRow' objects
+    public List<ParsingTableRow> elements; // the entries of the table will be saved in a list of 'ParsingTableRow' objects
 
     public ParsingTable() { this.elements = new ArrayList<>(); }
 

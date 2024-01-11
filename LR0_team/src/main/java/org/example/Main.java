@@ -107,6 +107,7 @@ public class Main {
 
                 break;
             } else if (option == 8) {
+                emptyFile("src/main/java/org/example/IO/out2.txt");
                 Grammar grammar2 = new Grammar("src/main/java/org/example/IO/G2.txt");
                 LR0 lrAlg2 = new LR0(grammar2);
 
@@ -130,7 +131,6 @@ public class Main {
                 } else {
                     System.out.println(parsingTable2);
                 }
-
 
                 boolean stop = false;
                 while (!stop) {

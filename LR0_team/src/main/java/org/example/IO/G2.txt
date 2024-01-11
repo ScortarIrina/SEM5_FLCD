@@ -1,18 +1,22 @@
-program compoundStmt declarationStmt assignmentStmt ifStmt whileStmt ioStmt simpleType arrayDecl expression term factor stmtList condition relation stmt
+program compoundStmt declarationStmt assignmentStmt ifStmt elsePart whileStmt ioStmt simpleType arrayDecl expression term factor stmtList condition relation stmt stmtListTail expressionTail
 identifier int string char [ ] ; = / * + - ( ) intConst { } read print if else < <= == != >= > while
 program
-program::=compoundStmt
-compoundStmt::=declarationStmt|assignmentStmt|ifStmt|whileStmt|ioStmt|compoundStmt
-declarationStmt::=simpleType identifier ;|arrayDecl
-simpleType::=int|string|char
-arrayDecl::=simpleType identifier [ ] ;
-assignmentStmt::=identifier = expression ;
-expression::=expression + term|expression - term|term
-term::=term * factor|term / factor|factor
-factor::=( expression )|identifier|intConst
-stmtList::=stmt|stmt ; stmtList
-ioStmt::=read ( identifier ) ;|print ( identifier ) ;
-ifStmt::=if ( condition ) compoundStmt|if ( condition ) compoundStmt else compoundStmt
-condition::=expression relation expression
-relation::=<|<=|==|!=|>=|>
-whileStmt::=while ( condition ) compoundStmt
+program ::= compoundStmt
+compoundStmt ::= stmt stmtList
+stmtList ::= stmt stmtListTail
+stmtListTail ::= ; stmtList | EPSILON
+stmt ::= declarationStmt | assignmentStmt | ifStmt | whileStmt | ioStmt
+declarationStmt ::= simpleType identifier ; | arrayDecl
+simpleType ::= int | string | char
+arrayDecl ::= simpleType identifier [ ] ;
+assignmentStmt ::= identifier = expression ;
+expression ::= term expressionTail
+expressionTail ::= + term expressionTail | - term expressionTail | EPSILON
+term ::= term * factor | term / factor | factor
+factor ::= ( expression ) | identifier | intConst
+ioStmt ::= read ( identifier ) ; | print ( identifier ) ;
+ifStmt ::= if ( condition ) compoundStmt elsePart
+elsePart ::= else compoundStmt | epsilon
+condition ::= expression relation expression
+relation ::= < | <= | == | != | >= | >
+whileStmt ::= while ( condition ) compoundStmt

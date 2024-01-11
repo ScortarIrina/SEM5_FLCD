@@ -220,7 +220,7 @@ public class LR0 {
                 row.setReductionNonTerminal(null);
             }
 
-            parsingTable.getElements().add(row);
+            parsingTable.elements.add(row);
         }
 
         return parsingTable;

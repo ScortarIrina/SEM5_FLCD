@@ -69,23 +69,30 @@ public class Grammar {
         // Split the production into left-hand side and right-hand side using the separator ("::=")
         String[] parts = production.split("::=");
 
-        // Split the lhs into symbols using the concatenation symbol
-        List<String> leftHandSide = List.of(parts[0].split(" "));
+        // Check if the parts array has at least two elements
+        if (parts.length >= 2) {
+            // Split the lhs into symbols using the concatenation symbol
+            List<String> leftHandSide = List.of(parts[0].split(" "));
 
-        // Split the rhs into individual productions using the separator ("|")
-        String[] rightHandSideProductions = parts[1].split("\\|");
+            // Split the rhs into individual productions using the separator ("|")
+            String[] rightHandSideProductions = parts[1].split("\\|");
 
-        // Initialize the map entry if it does not exist
-        this.productions.putIfAbsent(leftHandSide, new ArrayList<>());
+            // Initialize the map entry if it does not exist
+            this.productions.putIfAbsent(leftHandSide, new ArrayList<>());
 
-        // Process each production from the rhs and format them for storage in the map
-        for (String rightHandSideProduction : rightHandSideProductions) {
-            // Format each rhs production by splitting and collecting into a list
-            this.productions.get(leftHandSide).add(
-                    Arrays.stream(rightHandSideProduction.split(" "))
-                            .collect(Collectors.toList()));
+            // Process each production from the rhs and format them for storage in the map
+            for (String rightHandSideProduction : rightHandSideProductions) {
+                // Format each rhs production by splitting and collecting into a list
+                this.productions.get(leftHandSide).add(
+                        Arrays.stream(rightHandSideProduction.split(" "))
+                                .collect(Collectors.toList()));
+            }
+        } else {
+            // Handle the case where the production string does not contain "::="
+            LOGGER.warning("Invalid production format: " + production);
         }
     }
+
 
 
     // Method to check if our grammar is context-free
