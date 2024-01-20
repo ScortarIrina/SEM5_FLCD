@@ -1,5 +1,6 @@
-package org.example.Scanner;
+package Scanner;
 
+import Utils.Pair;
 import lombok.Data;
 
 @Data
@@ -7,32 +8,20 @@ public class SymbolTable {
     private Integer size;
     private HashTable hashTable;
 
-    public SymbolTable(Integer size){
+    public SymbolTable(Integer size) {
         hashTable = new HashTable(size);
     }
 
-    public String findByPos(Pair pos){
-        return hashTable.findByPos(pos);
-    }
-
-    public Integer getSize(){
-        return hashTable.getSize();
-    }
-
-    public Pair findPositionOfTerm(String term){
+    public Pair findPositionOfTerm(String term) {
         return hashTable.findPositionOfTerm(term);
     }
 
-    public boolean containsTerm(String term){
-        return hashTable.containsTerm(term);
-    }
-
-    public boolean add(String term){
-        return hashTable.add(term);
+    public void addToST(String term) {
+        hashTable.add(term);
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.hashTable.toString();
     }
 }
